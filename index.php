@@ -49,7 +49,6 @@
                     <tr class="bg-primary text-light">
                         <th class=>TODO</th>
                         <th>DUE DATE</th>
-                        <th>STATUS</th>
                         <th></th>
                         <th></th>
                     </tr>
@@ -59,7 +58,6 @@
                         <tr>
                             <td><?php echo h($task['name']); ?></td>
                             <td><?php echo h($task['due_date']); ?></td>
-                            <td>NOT YET</td>
                             <td>
                                 <a class="text-success" href="edit.php?id=<?php echo h($task['id']); ?>">EDIT</a>
                             </td>
