@@ -10,7 +10,7 @@ class DbManager
         $host = getenv(HOST_NAME);
         $dbname = getenv(DB_NAME);
         $charset = 'utf8mb4';
-        $user = getenv(USER);
+        $user = getenv(USER_NAME);
         $password = getenv(PASSWORD);
         $options = [
             PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
