@@ -7,11 +7,11 @@ class DbManager
     public function connect()
     {
         //DBに接続
-        $host = "localhost";
-        $dbname = "php_oop";
-        $charset = "utf8mb4";
-        $user = 'root';
-        $password='';
+        $host = getenv(HOST_NAME);
+        $dbname = getenv(DB_NAME);
+        $charset = 'utf8mb4';
+        $user = getenv(USER);
+        $password = getenv(PASSWORD);
         $options = [
             PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
