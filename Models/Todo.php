@@ -40,4 +40,10 @@ class Todo{
         $task = $stmt->fetch();
         return $task;
     }
+
+    //delete関数を設定
+    public function delete($id){
+        $stmt = $this->db_manager->dbh->prepare('DELETE FROM ' . $this->table . ' WHERE id = ?');
+        $stmt->execute([$id]);
+    }
 }
