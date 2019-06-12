@@ -15,7 +15,7 @@ class Todo{
 
     //indexに全要素を呼び出せるように関数allを設定
     public function all(){
-        $stmt = $this->db_manager->dbh->prepare('SELECT * FROM ' . $this->table);
+        $stmt = $this->db_manager->dbh->prepare('SELECT * FROM ' . $this->table . ' ORDER BY id DESC');
         $stmt->execute();
         $tasks = $stmt->fetchAll();
         return $tasks;
