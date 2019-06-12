@@ -25,4 +25,19 @@ class Todo{
         $stmt = $this->db_manager->dbh->prepare('INSERT INTO ' . $this->table . '(name) VALUES(?)');
         $stmt->execute([$name]);
     }
+
+    // 更新ページに値を引っ張るget関数を設定
+    public function get($id){
+        $stmt = $this->db_manager->dbh->prepare('SELECT * FROM ' . $this->table . ' WHERE id = ?');
+        $stmt->execute([$id]);
+        $task = $stmt->fetch();
+        return $task;
+    }
+    //updateボタンを押して、変更を加える時の関数
+    public function update($name , $id){
+        $stmt = $this->db_manager->dbh->prepare('UPDATE ' . $this->table . ' SET name = ? WHERE id = ?');
+        $stmt->execute([$name,$id]);
+        $task = $stmt->fetch();
+        return $task;
+    }
 }
